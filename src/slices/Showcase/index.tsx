@@ -6,6 +6,7 @@ import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
 import clsx from 'clsx'
 
 import { PiArrowsClockwise, PiGear } from 'react-icons/pi'
+import AnimatedContet from './animated-content'
 
 const icons = {
   gear: <PiGear />,
@@ -33,16 +34,18 @@ const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
       />
 
       {isFilled.richText(slice.primary.heading) && (
-        <PrismicRichText
-          field={slice.primary.heading}
-          components={{
-            heading2: ({ children }) => (
-              <h2 className="text-balance text-center text-5xl font-medium md:text-7xl">
-                {children}
-              </h2>
-            ),
-          }}
-        />
+        <AnimatedContet>
+          <PrismicRichText
+            field={slice.primary.heading}
+            components={{
+              heading2: ({ children }) => (
+                <h2 className="text-balance text-center text-5xl font-medium md:text-7xl">
+                  {children}
+                </h2>
+              ),
+            }}
+          />
+        </AnimatedContet>
       )}
 
       <div
